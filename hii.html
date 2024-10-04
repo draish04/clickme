@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>heyy love</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            height: 250vh;
+            font-family: Garamond, serif;
+            text-align: center;
+            background-color: #fcf3cf;
+            padding: 250px;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            color: #030303;
+        }
+        .countdown {
+            font-size: 2em;
+            margin-center: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HII SANKY! ITS YOUR BIRTHDAY IN.. </h1>
+    <div class="countdown" id="countdown"></div>
+    <a href="file:///C:/Users/Yashas/Desktop/TWO.HTML" target="_blank">Click here</a>
+
+    <script>
+        // Set the date for the countdown (YYYY, MM-1, DD, HH, MM, SS)
+        const countDownDate = new Date("2024-10-07T00:00:00").getTime();
+
+        // Update the countdown every second
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the countdown element
+            document.getElementById("countdown").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "Happiestt Birthdayy Sankyy!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
